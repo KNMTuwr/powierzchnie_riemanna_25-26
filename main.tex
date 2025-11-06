@@ -8,6 +8,8 @@
 \usepackage[pl, dates]{template}
 
 \newcommand{\RS}{\overline{\C}}
+\let\bigwedgeHelper\bigwedge
+\renewcommand{\bigwedge}{\mathop{\bigwedgeHelper}\nolimits} 
 
 \DeclareMathOperator{\im}{im}
 
