@@ -245,6 +245,27 @@ $$\alpha\mapsto \int_\Sigma\theta\wedge\alpha=\int-d(f\theta)=\int_{\partial \Si
 
   pozostaje $J_\theta=I_\gamma$
   ORBAZEK
+
+  Pokażemy, że $I_\gamma=I_\theta$: weźmy $\alpha\in\Omega^1(\Sigma)$, $d\alpha=0$ BZO: $\alpha|_{D_i}=0$
+  $\alpha|_{D_i}\in\Omega^1(D_i)$, $d\alpha=0\implies\exists g_i\in\Omega^0(D_i)$ i $dg_i=\alpha$ wybieram $\chi_i\in\Omega^0_c(D_i)$, $\chi_i\equiv 1$ na $\gamma(t_i)\in D_i'\subseteq D_i$
+
+  $\alpha\to \alpha-d(\chi_ig_i)\equiv 0$ na $D_i$
+
+  $[\alpha]=[\alpha-d(\chi_ig_i)\in H^1(\Sigma)$
+
+  $\alpha|_{U_i}=df_i$, $f_i\in\Omega^0(U_i)$ bo $H^1(U_i)=0$
+
+  $\int_\Sigma\theta_i\wedge\alpha=\int_\Sigma \theta_i\wedge df_i=\int_\Sigma-d(\theta_i\cdot f_i)+\int_\Sigma d\theta_if_i$
+  pierwsze ważne przejście to reguła Leibniza
+
+  ze Stokes mamy że pierwszy składnik jest 0
+
+  $\int_\Sigma d\theta_i\cdot f_i=\int_\Sigma f_id\theta_i=\int_\Sigma f_i\omega_{i+1}-f_i\omega_i=\int_{D_{i+1}}f_i\omega_{i+1}-\int_{D_i}f_i\omega_i$
+
+  $\alpha|_{d_i}=0\implies f_i|_{D_i}=const$
+
+  $\int_{D_{i+1}}f_i\omega_{i+1}-\int_{d_i}f_i\omega_i=f_i(\gamma(t_{i+1}))-f_i(\gamma(t_i))=\int_{\gamma|_{[t_i,t_{i+1}]}}df_i=\int_{\gamma|_{[t_i, t_{i+1}]}}\alpha$
 \end{proof}
+
 
 
