@@ -1,5 +1,7 @@
 \section{12.11.2025}{Zespolone formy rózniczkowe}
 
+% TODO: symbol \Omega^{q,p}
+
 Zadanie z listy: $H^1(\Sigma)\ni[\alpha]\neq0\implies\exists$ pętla $\gamma$ taka, że $I_\gamma([\alpha])=\int_\gamma\alpha\neq0$
 
 \begin{theorem}{}{}
@@ -9,19 +11,15 @@ Zadanie z listy: $H^1(\Sigma)\ni[\alpha]\neq0\implies\exists$ pętla $\gamma$ ta
   jest formą $2$-liniową, antysymetryczną, niezdegenerowaną ($\implies 2|\dim(H^1(\Sigma))$)
 \end{theorem}
 
-Pytanie: czy $S^1\cong T^2$? gdyby tak to byłby dyfeomorfizm, to $H^1$ byłoby takie same, ale tak nie jest ($H^1(S^1)=0$, $H^1(T^2)=\Z^2$)
+Pytanie: czy $S^1\cong T^2$? Gdyby tak było, to istniałby dyfeomorfizm \( f: S^1 \to T^2 \), który indukowałby izmorofizm \( f^\star : H^1 (S^1) \to H^1 (T^2) \). Ewidentnie tak nie jest, bo $H^1(S^1)=0$, a $H^1(T^2)=\Z^2$.
 
-Zespolone formy różniczkowe
+\subsection{Zespolone formy różniczkowe}
 
-$\Sigma$ - powierzchnia Riemanna
+Niech $\Sigma$ będzie powierzchnią Riemanna. Potrzebujemy zespolonej przestrzeni kostycznej/zespolone $1$-formy. Definiujemy
 
-potrzebyjemy zespolonej powierzchni kostycznej/zespolone $1$-formy
+$T_p^*\Sigma^\C = \Hom_\R (T_p\Sigma,\C )$
 
-$T_p^*\Sigma=\Hom_\R(T_p\Sigma,\R)$
-
-$T_p^*\Sigma^\C=\Hom_\R(T_p\Sigma,\R)$
-
-$f\inC^\infty(\Sigma, \C)\to (df)_p\inT_p^*\Sigma$
+$f \in C^\infty(\Sigma, \C )\to (df)_p \in T_p^*\Sigma$
 
 np. lokalnie $z=x+iy$ $d(x+iy)=dx_idy:=dz$
 
@@ -34,13 +32,14 @@ sprzężenie $\omega\in\Omega^1_\C$ to $\overline{\omega}\in\Omega^1_\C$ t,że $
 \end{example}
 
 \begin{definition}{}{}
-  zespolona struktura na rzeczywistej p.liniowej $V$ to $\R$-liniowe $J:V\to V$ takie, że $J^2=-Id$
+  Zespolona struktura na rzeczywistej p.liniowej $V$ jest zadana przez $\R$-liniowe $J:V\to V$ takie, że $J^2=-Id$. Definiujemy wtedy mnożenie przez liczby zespolone jako
+\[ 
+    (a + bi)v := a + b(Jv). 
+\]
 \end{definition}
 
-$(V, J)$ to struktura zespolona na p.lin. $V$: $(a+bi)v=av+bJv$
-
 \begin{fact}{}{}
-  na $T_p\Sigma$ istnieje jedyna struktura zespolona $J$ taka, że $f:\Sigma\to \C$ jest holomorficzna w $p$ $\iff$ $df_p:(T_p\Sigma,J)\to\C$ jest $\C$-liniowe
+  Na $T_p\Sigma$ istnieje jedyna struktura zespolona $J$ taka, że gładka $f:\Sigma\to \C$ jest holomorficzna w $p$ $\iff$ $df_p:(T_p\Sigma,J)\to\C$ jest $\C$-liniowe
 
   w mapie $J[\alpha]_p=[p+i(\gamma-p)]_p$
 \end{fact}
@@ -50,24 +49,26 @@ $(V, J)$ to struktura zespolona na p.lin. $V$: $(a+bi)v=av+bJv$
 \end{proof}
 
 \begin{fact}{}{}
-  Niech $(V, J)$ będzie jak wyżej, $A:V\to\C$ $\R$-liniowe
+  Niech $(V, J)$ będzie jak wyżej oraz niech $A:V\to\C$ będzie $\R$-liniowe. Wtedy $A$ zapisuje się jednoznacznie jako suma $\C$-liniowego $A'$ i $\C$-antyliniowego $A''$, tzn. \( A' \) i \( A'' \) t. że
 
-  $A$ zapisuje się jednoznacznie jako suma $\C$-liniowego $A'$ i $\C$-antyliniowego $A''$
+\begin{align*}
+    A'(Jv)  &= iA'(v) \\
+    A''(Jv) &= -iA''(v)
+\end{align*}
 
-  $A'(Jv)=iA'(v)$
-  
-  $A''(Jv)=-iA''(v)$
 \end{fact}
 
 \begin{proof}
-  $A'(v)=\frac{1}{2}(A(v)-iA(Jv))$
-
-  $A''(v)=\frac{1}{2}(A(v)+iA(Jv))$
+    Określamy potrzebne odwzorowania jako:
+    \begin{align*}
+        A'(v) &=\frac{1}{2}(A(v)-iA(Jv)) \\
+        A''(v) &=\frac{1}{2}(A(v)+iA(Jv))
+    \end{align*}
 \end{proof}
 
-rozkłąd z faktu daje rozkłady 
+Rozkład z powyższego faktu daje rozkłady 
 \begin{itemize}
-  \item $T_p^*\Sigma^\C=T_p^*\Simga'\oplus T_p^*\Sigma''$
+  \item $T_p^*\Sigma^\C = T_p^*\Sigma'\oplus T_p^*\Sigma''$
   \item analogicznie $\Omega_\C^1$
   \item rozkład $d$:
     \begin{center}
@@ -86,7 +87,7 @@ rozkłąd z faktu daje rozkłady
 
     dla $f:\Sigma\to\C$ ($C^\infty$, niekoniecznie $O$)
     
-    $df=f_xdx+dydy=f_x\frac{dz+d\overline{z}}{2}+f_y\frac{dz-d\overline{z}}{2}=\underline{\frac{1}{2}(fx-ify)dz}_{\partialf}+\underline{\frac{1}{2}(...)}_{\overline{\partial}}$
+    $df=f_xdx+dydy=f_x\frac{dz+d\overline{z}}{2}+f_y\frac{dz-d\overline{z}}{2}=\underline{\frac{1}{2} (fx-ify)dz}_{\partial f}+\underline{\frac{1}{2}(...)}_{\overline{\partial}}$
 \end{itemize}
 
 Równania Cauchy'ego-Riemanna $\overline{\partial}f=0$ - wtedy $df=\partial f=f'(z)dz$
@@ -112,16 +113,15 @@ $\Delta=2i\overline{\partial}\partial:\Omega^0\to\Omega^2$
 $\Delta f=2i\frac{1}{2}(\partial_x+i\partial_y)\frac{1}{2})\partial_x-i\partial_y)fd\overline{z}dz=-(\partial_x^2+\partial_y^2)fdxdy$
 
 \begin{definition}{}{}
-  $f$ jest harmoniczna $\iff$ $\Delta f=0$
+  Funkcję gładką $f$ nazwiemy harmoniczną, gdy $\Delta f=0$.
 \end{definition}
 
-
-jeśli $f$ jest holomoficzna to $Re f$, $Im f$ są harmoniczne
-
-tutaj rachunek
-
-
-lokalnie: harmoniczna $\phi=Re f$ dla pewnej holomorficznej $f$
+\begin{fact}{}{}
+    \begin{enumerate}[label=\alpha]
+        \item Jeśli funkcja \( f: \Sigma \to \C \) jest holomorficzna, to \( \Re f \) oraz \( Im f \) są funkcjami harmonicznymi. 
+        \item Jeśli \( \varphi: \Sigma \to \R \) jest harmoniczna, to \textbf{lokalnie} mamy \( \varphi = \Re f \) dla holomorficznej funkcji \( f \).
+    \end{enumerate}
+\end{fact}
 
 \begin{proof}
   $A:i\overline{\partial}\phi+\overline{i\overline{\partial}\phi}\in\Omega_\R^1$

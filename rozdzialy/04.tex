@@ -16,7 +16,7 @@ gładka $2$-forma $\omega$ na $\Sigma$ to
 $$\omega:\Sigma\to \bigwedge^2T^*\Sigma=\bigcup_{p\in\Sigma}\bigwedge^2T_p^*\Sigma$$
 $$\omega(p)\in\bigwedge^2T_p^*\Sigma$$
 lokalnie we współrzędnych 
-$$\omega=f(x,y)dx\wedge dy=f(x,y)dxdy$$
+$$\omega = f(x,y)dx\wedge dy=f(x,y)dxdy$$
 [$\omega(p)=f(x(p), y(p))[dx]_p\wedge[dy]_p$]
 
 Jak wygląda zmiana współrzędnych $(x,y)\to(x', y')$?
@@ -25,11 +25,11 @@ $$f(x(x', y'), y(x', y'))(\frac{\partial x}{\partial x'}dx'+\frac{\partial x}{\p
 \subsection{Całka}
 
 Jeśli $\supp(\omega)\subseteq U$, gdzie $U$ jest zbiorem mapowym współrzędnych $(x, y)$ to 
-$$\int_\Sigma\omega=\int_U\omega=\int_Uf(x,y)dxdy$$
+$$\int_\Sigma\omega = \int_U\omega =\int_Uf(x,y)dxdy$$
 to nie zależy od wyboru współrzędnych na nośniku $\omega$.
 
 Ogólnie jeśli mamy $\omega$ o zwartym nośniku, $\omega\in\Omega_c^2(\Sigma)$, to możemy ten nośnik pokryć zbiorami mapowymi $\supp(\omega)\subseteq \bigcup_{i\leq n}U_i$. Rozkład jedności: $\chi_i\in C_c^\infty(U_i)$ takie, że $\sum \chi_i=1$.
-$$\int_\Sigma\omega=\sum_i\int_{U_i}\chi_i\omega$$
+$$\int_\Sigma\omega = \sum_i\int_{U_i}\chi_i\omega$$
 
 \begin{definition}{różniczka}{}
   $$d:\Omega^1(\Sigma)\to \Omega^2(\Sigma)$$
@@ -182,17 +182,17 @@ $$\int_\Sigma:H^2_c(\Sigma)\to \R$$
   różnowartościowość:
 
   $$\Sigma=\R^2$$
-  niech $\omega\in\Omega_c^2(\R^2)$, $\int_{\R^2}\omega=0$
+  niech $\omega\in\Omega_c^2(\R^2)$, $\int_{\R^2}\omega = 0$
 
-  $\omega=R(x,y)dxdy$, $R\inC_c^\infty(\R^2)$
+  $\omega = R(x,y)dxdy$, $R \in C_c^\infty(\R^2)$
 
   $r(x)=\int_{-\infty}^\infty R(x,y)dy$
   $\psi$ to pomocnicza bump funkcja ($\int_\R \psi(t)dt=1$)
 
   $\overline{R}(x,y)=R(x,y)=r(x)\psi(y)$
   $$\int_\R\overline{R}(x,y)dy=0$$
-  $$P(x,y)=\int_{-\infty}^y(\overine{R}(x,t)dt$$
-  $P\inC_c^\infty(\R^2)$, $P_y=\overline{R}$
+  $$P(x,y) = \int_{-\infty}^y(\overline{R}(x,t)dt$$
+  $P\in C_c^\infty(\R^2)$, $P_y=\overline{R}$
 
   $$Q(x,y)=\psi(y)\int_{-\infty}^xr(t)dt$$
   $Q\in\Omega_c^\infty(\R^2)$, $Q_x(x,y)=\psi(y)r(x)$
