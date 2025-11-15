@@ -23,7 +23,7 @@ jobs:
         id: rename_file
         run: |
           sha_short=$(git rev-parse --short HEAD)
-          datetime_now=$(date +'%Y-%m-%dT%H:%M:%S')
+          datetime_now=$(date +'%Y-%m-%dT%H-%M-%S')
           filename=pow_riemanna-$datetime_now-$sha_short.pdf
           echo "filename=$filename" >> $GITHUB_OUTPUT
           echo "sha_short=$sha_short" >> $GITHUB_OUTPUT
