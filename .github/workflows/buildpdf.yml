@@ -16,6 +16,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
+          latexmk_use_lualatex: true
           root_file: main.tex
 
       - name: Upload PDF artifact
