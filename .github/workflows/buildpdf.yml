@@ -1,10 +1,8 @@
 name: Build PDF
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - master
+    branches: [ main ]
 
 permissions:
   contents: write
