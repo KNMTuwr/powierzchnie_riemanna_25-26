@@ -88,8 +88,16 @@ wpierw będziemy się skupiać na $H^1$
 \end{fact}
 
 \begin{example}[m]
-  \item annulus $A$
+  \item Annulus (znany też jako pierścień kołowy) to obszar płaszczyzny zespolonej pomiędzy dwoma okręgami: $A=\{z\in\C:r\leq|z|\leq R\}$. Punkty na annulusie możemy parametryzować przy pomocy promienia oraz kąta $(\rho, \theta)$.
 
+    Pokażemy, że 
+    $$H^1(A)=\ker d^1/\im d^0\neq 0,$$
+    czyli wykażemy, że nie istnieje $F\in C^\infty(A)$ takie, że 1-forma $\d\theta$ jest równa $\d F$.
+
+    Rozważmy krzywą 
+    $$\gamma:[0,1]\to A$$
+    $$\gamma(t)=(r, 2\pi t)$$
+    zaznaczoną na obrazku.
     \begin{center}
       \begin{tikzpicture}
         \draw (0,0) circle (1);
@@ -99,9 +107,10 @@ wpierw będziemy się skupiać na $H^1$
         \node at (1.7, .3) {\color{green}$\gamma$};
       \end{tikzpicture}
     \end{center}
-    $H^1(A)\neq 0$, $d\theta\in \Omega^1(A)$, $dd\theta=0$ dla $d\theta\in \ker(d^1)$
-    $$\int_\gamma d\theta=\theta(\gamma(1))-\theta(\gamma(0))=2\pi$$
-    gdyby $d\theta=dF$ dla $F\in C^\infty$ to wówczas $\int_\gamma d\theta=\int_\gamma dF=F(\gamma(1))-F(\gamma(0))=0$
+    Gdyby istniało $F\in C^\infty(A)$ takie że $\d\theta=\d F$ to wówczas 
+    $$\int_\gamma \d\theta=\int_\gamma \d F=F(\gamma(1))-F(\gamma(0))=0,$$ 
+    ale całka z $\d\theta$ nie jest zerowa:
+    $$\int_\gamma \d\theta=\theta(\gamma(1))-\theta(\gamma(0))=2\pi-0=2\pi.$$
 
   \item sfera $S^2$ (mapy: biegun płn $U$ i płd $V$)
 
@@ -184,7 +193,11 @@ $$\int_\Sigma:H^2_c(\Sigma)\to \R$$
   $$\Sigma=\R^2$$
   niech $\omega\in\Omega_c^2(\R^2)$, $\int_{\R^2}\omega = 0$
 
+<<<<<<< HEAD
   $\omega = R(x,y)dxdy$, $R \in C_c^\infty(\R^2)$
+=======
+  $\omega=R(x,y)dxdy$, $R\in C_c^\infty(\R^2)$
+>>>>>>> 82ad1c3 (04)
 
   $r(x)=\int_{-\infty}^\infty R(x,y)dy$
   $\psi$ to pomocnicza bump funkcja ($\int_\R \psi(t)dt=1$)
