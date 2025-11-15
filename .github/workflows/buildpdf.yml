@@ -19,9 +19,20 @@ jobs:
           latexmk_use_lualatex: true
           root_file: main.tex
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+      - name: Rename file
+        id: rename_file
+        run: |
+          sha_short=$(git rev-parse --short HEAD)
+          datetime_now=$(date +'%Y-%m-%dT%H:%M:%S')
+          filename=pow_riemanna-$datetime_now-$sha_short.pdf
+          echo "filename=$filename" >> $GITHUB_OUTPUT
+          echo "sha_short=$sha_short" >> $GITHUB_OUTPUT
+          mv main.pdf $filename
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: compiled-pdf
-          path: main.pdf
-          overwrite: true
+          name: Release ${{ steps.rename_file.outputs.filename }}
+          tag_name: ${{ steps.rename_file.outputs.sha_short }}
+          draft: false
+          prerelease: false
+          files: ${{ steps.rename_file.outputs.filename }}
